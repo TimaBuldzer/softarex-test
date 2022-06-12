@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.contrib.auth import views
 
-# Create your views here.
+
+class LoginView(views.LoginView):
+    template_name = 'auth/login.html'
+
+    def get_success_url(self):
+        return '/'
