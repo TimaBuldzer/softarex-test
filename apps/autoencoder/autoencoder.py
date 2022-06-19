@@ -1,7 +1,7 @@
 import keras.layers
 from keras import Model, Input
 
-from types import Dimensions
+from apps.autoencoder.types import Dimensions
 
 
 class Autoencoder:

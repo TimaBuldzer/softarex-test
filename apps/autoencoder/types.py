@@ -6,13 +6,13 @@ width = TypeVar('width', int, str)
 np_array = TypeVar('np_array', Iterable, list)
 
 
-class Dataset(NamedTuple):
+@dataclasses.dataclass
+class Dataset:
     train_x: np_array
     train_y: np_array
     test_x: np_array
 
 
-@dataclasses.dataclass
-class Dimensions:
+class Dimensions(NamedTuple):
     height: int
     width: int

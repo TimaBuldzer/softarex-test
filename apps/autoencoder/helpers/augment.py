@@ -1,7 +1,7 @@
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 
-from autoencoder.helpers.create_dataset import create_dataset
+from apps.autoencoder.helpers.create_dataset import create_dataset
 
 width = int
 height = int

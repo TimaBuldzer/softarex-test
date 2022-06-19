@@ -3,7 +3,7 @@ import numpy as np
 
 from keras_preprocessing.image import load_img, img_to_array
 
-from autoencoder.types import Dimensions, Dataset
+from apps.autoencoder.types import Dimensions, Dataset
 
 
 def create_dataset(directory: str, dimensions: Dimensions) -> Dataset:
