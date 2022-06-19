@@ -17,7 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'apps.users.apps.UsersConfig',
-    'apps.autoencoder.apps.AutoencoderConfig'
+    'apps.autoencoder.apps.AutoencoderConfig',
+    'apps.main.apps.MainConfig'
 ]
 
 MIDDLEWARE = [

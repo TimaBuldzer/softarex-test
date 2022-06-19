@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block head %}
+    <style>
+        .child {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="d-relative">
+        <div class="card p-3 text-center child">
+            <ul>
+                <li><a href="{% url 'users:profile' %}">Profile</a></li>
+                <li><a href="#">Auto-encoder</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

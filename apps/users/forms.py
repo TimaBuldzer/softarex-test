@@ -4,6 +4,18 @@ from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 
 
+class UserUpdateForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['username']
+
+    def save(self, commit=True):
+        username = self.cleaned_data['username']
+        self.instance.username = username
+        self.instance.save()
+        return self.instance
+
+
 class UserRegisterForm(ModelForm):
     password1 = forms.CharField(required=True)
     password2 = forms.CharField(required=True)
