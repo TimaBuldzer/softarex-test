@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-    Update profile
+    Auto-encode image
 {% endblock %}
 {% block head %}
     <style>
@@ -16,18 +16,17 @@
     <div class="d-relative">
         <div class="card p-3 text-center child">
             <div class="card-head">
-                <h3>Update profile</h3>
+                <h3> Auto-encode image</h3>
             </div>
             <div class="card-body">
-                <form action="{% url 'users:profile' %}" method="post">
+                <form action="{% url 'autoencoder:autoencode' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="username">Your username</label>
-                        <input type="text" id="username" name="username" class="form-control"
-                               value="{{ form.username.value }}">
+                        <label for="original">Your image</label>
+                        <input accept=".png" type="file" id="original" name="original" class="form-control">
                         {% if form.errors %}
                             <ul class="mt-2">
-                                {% for error in form.errors.username %}
+                                {% for error in form.errors.original %}
                                     <li class="bg-light text-danger">
                                         {{ error }}
                                     </li>
@@ -37,7 +36,7 @@
                     </div>
                     <div class="form-group mt-2">
                         <a href="{% url 'main:main' %}" class="btn btn-warning">Cancel</a>
-                        <button class="btn btn-success">Save changes</button>
+                        <button class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>
