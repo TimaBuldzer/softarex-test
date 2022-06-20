@@ -1,5 +1,6 @@
 from django.contrib.auth import views
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LogoutView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
@@ -26,3 +27,7 @@ class ProfileView(UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+class CustomLogoutView(LogoutView):
+    next_page = '/login/'

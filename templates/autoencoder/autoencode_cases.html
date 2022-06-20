@@ -17,6 +17,7 @@
         <div>
             <div class="display-flex" style="justify-content: space-evenly">
                 <a href="{% url 'main:main' %}" class="btn btn-info">Back to main menu</a>
+                <h3>You have encoded: {{ case_list|length }}</h3>
             </div>
             {% for case in case_list %}
                 <div class="card display-flex p-3">
